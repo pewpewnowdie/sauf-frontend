@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 import { Loader2 } from "lucide-react";
 
 export default function ListProjects() {
@@ -49,12 +48,11 @@ export default function ListProjects() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {data.map((project) => (
             <div
-              key={project.key || project.id}
-              className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-md transition"
+              key={project.key}
+              className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-md transition flex flex-col"
             >
-              {/* Project header */}
               <div className="flex items-center justify-between mb-3">
-                <h2 className="text-lg font-semibold">{project.name}</h2>
+                <Link to="#" className="text-lg font-semibold">{project.name}</Link>
                 <span
                   className={`text-xs px-2 py-1 rounded-full ${
                     project.status === "NS"
@@ -68,15 +66,13 @@ export default function ListProjects() {
                 </span>
               </div>
 
-              {/* Description */}
-              <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-3 mb-4">
-                {project.description || "No description provided."}
-              </p>
-
-              {/* Meta info */}
-              <div className="text-xs text-gray-500 dark:text-gray-400 space-y-1">
-                <p>Start: {project.start_date ?? "—"}</p>
-                <p>End: {project.end_date ?? "—"}</p>
+              <div className="flex flex-col justify-between flex-1 overflow-hidden">
+                <div className="overflow-hidden">
+                    <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-3 mb-4">
+                        {project.description || "No description provided."}
+                    </p>
+                </div>
+                { /* Add Buttons here */ }
               </div>
             </div>
           ))}
