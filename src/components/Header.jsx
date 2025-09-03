@@ -10,8 +10,8 @@ export default function Header() {
   const [search, setSearch] = useState("")
   const { theme, setTheme } = useTheme()
   const menuItems = [
-    { title: "Projects", subItems: [{ title: "Project A", to: "/projects/a" }] },
-    { title: "Issues", subItems: [{ title: "Issue 1", to: "/issues/1" }] }
+    { title: "Projects", subItems: [{ title: "Project A", to: "/projects/a" }, { title: "Project B", to: "/projects/b" }, { title: "Project B", to: "/projects/b" }] },
+    { title: "Issues", subItems: [{ title: "Issue 1", to: "/issues/1" }, { title: "Issue 2", to: "/issues/2" }, { title: "Issue 3", to: "/issues/3" }] }
   ];
 
   return (
@@ -20,7 +20,7 @@ export default function Header() {
       <div className="flex items-center gap-4">
         {/* Logo */}
         <Link to="/" className="text-xl font-bold text-blue-600 dark:text-blue-400">
-          SAUF
+          sauf :)
         </Link>
 
         {/* Desktop Nav */}
