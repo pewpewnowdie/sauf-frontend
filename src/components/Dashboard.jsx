@@ -1,12 +1,13 @@
 import { useState } from "react";
 import Header from "./Header";
 import { ChartBar, FileText, Users, Settings } from "lucide-react";
+import ListProjects from "./ListProjects";
 
 export default function Dashboard() {
-  const [activeTab, setActiveTab] = useState("overview");
+  const [activeTab, setActiveTab] = useState("dashboard");
 
   const sidebarItems = [
-    { title: "Overview", icon: <ChartBar className="h-5 w-5" />, id: "overview" },
+    { title: "Dashboard", icon: <ChartBar className="h-5 w-5" />, id: "dashboard" },
     { title: "Team", icon: <Users className="h-5 w-5" />, id: "team" },
     { title: "Settings", icon: <Settings className="h-5 w-5" />, id: "settings" },
   ];
@@ -35,24 +36,9 @@ export default function Dashboard() {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 p-6 overflow-auto">
-          <h1 className="text-2xl font-bold mb-6 capitalize">{activeTab}</h1>
-
-          {activeTab === "overview" && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow">
-                <h2 className="font-semibold text-lg">Total Projects</h2>
-                <p className="text-2xl mt-2">12</p>
-              </div>
-              <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow">
-                <h2 className="font-semibold text-lg">Open Issues</h2>
-                <p className="text-2xl mt-2">34</p>
-              </div>
-              <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow">
-                <h2 className="font-semibold text-lg">Team Members</h2>
-                <p className="text-2xl mt-2">8</p>
-              </div>
-            </div>
+        <main className="flex-1 overflow-auto">
+          {activeTab === "dashboard" && (
+            <ListProjects/>
           )}
 
           {activeTab === "team" && (

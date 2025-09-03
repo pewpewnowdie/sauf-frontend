@@ -19,7 +19,7 @@ export default function Header() {
       {/* Left Section */}
       <div className="flex items-center gap-4">
         {/* Logo */}
-        <Link to="/" className="text-xl font-bold text-blue-600 dark:text-blue-400">
+        <Link to="/" className="text-xl font-bold p-1 text-blue-600 dark:text-blue-400">
           sauf :)
         </Link>
 
