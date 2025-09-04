@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Header from "./Header";
-import { ChartBar, FileText, Users, Settings } from "lucide-react";
+import { ChartBar, Users, Settings } from "lucide-react";
 import ListProjects from "./ListProjects";
 
 export default function Dashboard() {
@@ -16,8 +16,6 @@ export default function Dashboard() {
     <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       {/* Header */}
       <Header />
-
-      {/* Main body: sidebar + content */}
       <div className="flex flex-1 overflow-hidden">
         {/* Sidebar */}
         <aside className="w-64 bg-white dark:bg-gray-800 border-r dark:border-gray-700 p-4 flex flex-col gap-4 flex-shrink-0">
@@ -25,9 +23,8 @@ export default function Dashboard() {
             <button
               key={item.id}
               onClick={() => setActiveTab(item.id)}
-              className={`flex items-center gap-2 p-2 rounded-md w-full text-left hover:bg-gray-100 dark:hover:bg-gray-700 ${
-                activeTab === item.id ? "bg-gray-200 dark:bg-gray-700 font-semibold" : "font-normal"
-              }`}
+              className={`flex items-center gap-2 p-2 rounded-md w-full text-left hover:bg-gray-100 dark:hover:bg-gray-700 ${activeTab === item.id ? "bg-gray-200 dark:bg-gray-700 font-semibold" : "font-normal"
+                }`}
             >
               {item.icon}
               {item.title}
@@ -38,7 +35,7 @@ export default function Dashboard() {
         {/* Main Content */}
         <main className="flex-1 overflow-auto">
           {activeTab === "dashboard" && (
-            <ListProjects/>
+            <p>nothing</p>
           )}
 
           {activeTab === "team" && (
@@ -67,6 +64,6 @@ export default function Dashboard() {
           )}
         </main>
       </div>
-    </div>
+    </div >
   );
 }

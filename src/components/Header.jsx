@@ -10,12 +10,12 @@ export default function Header() {
   const [search, setSearch] = useState("")
   const { theme, setTheme } = useTheme()
   const menuItems = [
-    { title: "Projects", subItems: [{ title: "Project A", to: "/projects/a" }, { title: "Project B", to: "/projects/b" }, { title: "Project B", to: "/projects/b" }] },
-    { title: "Issues", subItems: [{ title: "Issue 1", to: "/issues/1" }, { title: "Issue 2", to: "/issues/2" }, { title: "Issue 3", to: "/issues/3" }] }
+    { title: "Projects", subItems: [{ title: "View All Projects", to: "/listProjects" }, { title: "Project B", to: "/projects/b" }, { title: "Project B", to: "/projects/b" }] },
+    { title: "Issues", subItems: [{ title: "Search for Issues", to: "/searchIssues" }, { title: "Issue 2", to: "/issues/2" }, { title: "Issue 3", to: "/issues/3" }] }
   ];
 
   return (
-    <header className="w-full bg-white dark:bg-gray-900 border-b dark:border-gray-700 shadow-sm px-4 py-2 flex items-center justify-between">
+    <header className="w-full bg-white dark:bg-gray-900 border-b dark:border-gray-700 shadow-sm px-4 py-2 h-12 flex items-center justify-normal">
       {/* Left Section */}
       <div className="flex items-center gap-4">
         {/* Logo */}
@@ -29,8 +29,8 @@ export default function Header() {
       </div>
 
       {/* Center Section - Search */}
-      <div className="flex flex-1 max-w-lg mx-6">
-        <div className="relative w-full">
+      <div className="flex flex-1 justify-end w-full mx-6">
+        <div className="relative w-fit">
           <Search className="absolute left-2 top-2.5 h-5 w-5 text-gray-400 dark:text-gray-500" />
           <Input
             type="text"
@@ -43,7 +43,7 @@ export default function Header() {
       </div>
 
       {/* Right Section - Icons */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center justify-end gap-4">
         {/* Theme Toggle */}
         <Button
           variant="ghost"
