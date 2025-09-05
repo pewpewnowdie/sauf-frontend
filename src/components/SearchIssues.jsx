@@ -14,7 +14,11 @@ export default function SearchIssues() {
   const [error, setError] = useState(null);
 
   const handleSearch = async () => {
-    if (!search.trim()) return;
+    if (!search.trim()) {
+      setData([])
+      setError(null)
+      return;
+    }
 
     try {
       setLoading(true);
