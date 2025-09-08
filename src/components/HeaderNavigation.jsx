@@ -32,7 +32,7 @@ export default function HeaderNavigation({ items }) {
     <NavigationMenu viewport={false}>
       <NavigationMenuList className="flex flex-row gap-4">
         {items.map((menu, index) => (
-          <NavigationMenuItem key={index} className="relative"> {/* Make parent relative */}
+          <NavigationMenuItem key={index} className="relative">
             <NavigationMenuTrigger>
               <div className="block w-full p-2">
                 {menu.title}
